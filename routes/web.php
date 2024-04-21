@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -24,4 +25,7 @@ require __DIR__.'/auth.php';
 
 
 Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
-
+Route::get('admin/view_catagory', [AdminController::class, 'view_catagory'])->name('view_catagory');
+Route::post('admin/add_catagory', [AdminController::class, 'add_catagory'])->name('add_catagory');
+Route::get('admin/delete_catagory/{id}', [AdminController::class, 'delete_catagory'])->name('delete_catagory');
+Route::get('admin/view_product', [AdminController::class, 'view_product'])->name('view_product');
