@@ -24,8 +24,10 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
+Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('dashboard');
 Route::get('admin/view_catagory', [AdminController::class, 'view_catagory'])->name('view_catagory');
 Route::post('admin/add_catagory', [AdminController::class, 'add_catagory'])->name('add_catagory');
 Route::get('admin/delete_catagory/{id}', [AdminController::class, 'delete_catagory'])->name('delete_catagory');
 Route::get('admin/view_product', [AdminController::class, 'view_product'])->name('view_product');
+Route::post('admin/add_product', [AdminController::class, 'add_product'])->name('add_product');
+Route::get('admin/show_product', [AdminController::class, 'show_product'])->name('show_product');
