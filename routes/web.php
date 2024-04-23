@@ -31,3 +31,6 @@ Route::get('admin/delete_catagory/{id}', [AdminController::class, 'delete_catago
 Route::get('admin/view_product', [AdminController::class, 'view_product'])->name('view_product');
 Route::post('admin/add_product', [AdminController::class, 'add_product'])->name('add_product');
 Route::get('admin/show_product', [AdminController::class, 'show_product'])->name('show_product');
+Route::get('admin/delete_product/{id}', [AdminController::class, 'delete_product'])->name('delete_product');
+Route::get('admin/update_product/{id}', [AdminController::class, 'update_product'])->name('update_product');
+Route::post('admin/update_product_confirm/{id}', [AdminController::class, 'update_product_confirm'])->name('update_product_confirm');
