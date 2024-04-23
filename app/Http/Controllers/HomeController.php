@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
     public function rootpage(){
-        return view('home.userpage');
+        $products = product::all();
+        return view('home.userpage', compact('products'));
     }
     
     public function index(){
