@@ -11,8 +11,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Men's Shirt
+                           <a href="{{route('product_details', $product->id)}}" class="option1">
+                           Product Details
                            </a>
                            <a href="" class="option2">
                            Buy Now
@@ -45,5 +45,9 @@
                   </div>
                </div>
                @endforeach
+
+               <span style="padding-top: 20px;">
+                  {!!$products->withQueryString()->links('pagination::bootstrap-5')!!}
+               </span>
          </div>
       </section>
