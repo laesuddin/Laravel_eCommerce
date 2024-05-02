@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Cart;
+use App\Models\Order;
 
 class HomeController extends Controller
 {
@@ -73,6 +74,30 @@ class HomeController extends Controller
         $cart = cart::find($id);
         $cart->delete();
         return redirect()->back();
+    }
+
+    public function cash_order(){
+        $id = Auth::user()->id;
+        $carts = cart::where('user_id', '=' , $id)->get();
+        foreach($carts as $cart){
+            $order = new order;
+            $order->name = $cart->name;
+            $order->email = $cart->email;
+            $order->user_id = $cart->user_id;
+            $order->product_title = $cart->product_title;
+            $order->price = $cart->price;
+            $order->quantity = $cart->quantity;
+            $order->image = $cart->image;
+            $order->product_id = $cart->product_id;
+            $order->payment_status = 'Cash on Delivery';
+            $order->delivery_status = 'Processing';
+            $order->save();
+
+            $cart_id = $cart->id;
+            $find_cart = cart::find($cart_id);
+            $find_cart->delete();
+        }
+        return view('home.comfirm_product');
     }
     
 }

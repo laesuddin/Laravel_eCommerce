@@ -28,22 +28,9 @@
             padding: 30px;
             padding-top: 120px;
          }
-         table, th, td{
-            border: 1px solid gray;
-         }
-         .th_style{
+         .h1_style{
             font-size: 30px;
-            padding: 5px;
-            background: skyblue;
-        }
-        .img_style{
-            height: 100px;
-            width: 100px;
-        }
-        .total_style{
-            font-size: 20px;
-            padding: 40px;
-        }
+         }
       </style>
    </head>
    <body>
@@ -53,38 +40,8 @@
          <!-- end header section -->
      
         <div class="center">
-            <table>
-                <tr>
-                    <th class="th_style">Product Title</th>
-                    <th class="th_style">Product Quantity</th>
-                    <th class="th_style">Price</th>
-                    <th class="th_style">Image</th>
-                    <th class="th_style">Action</th>
-                </tr>
-                @php
-                  $totalprice = 0 
-               @endphp
-                @foreach($cart as $cart)  
-                <tr>
-                    <td>{{$cart->product_title}}</td>
-                    <td>{{$cart->quantity}}</td>
-                    <td>${{$cart->price}}</td>
-                    <td><img class="img_style" src="/product/{{$cart->image}}"></td>
-                    <td><a class="btn btn-danger" onclick="return confirm('Are you sure to remove this product?')" href="{{route('remove_cart', $cart->id)}}">Remove</a></td>
-                </tr>
-                @php 
-                  $totalprice =  $totalprice + $cart->price
-                @endphp
-                @endforeach
-            </table>
-            <div>
-               <h1 class="total_style">Total Price: ${{$totalprice}}</h1>
-            </div>
-            <div>
-               <h1 style="font-size: 25px; padding-bottom: 15px;">Proceed to Order</h1>
-               <a href="{{route('cash_order')}}" class="btn btn-danger">Cash On Delivery</a>
-               <a href="" class="btn btn-danger">Pay Using Card</a>
-            </div>
+            <h1 class="h1_style">Your order has been confirm!</h1><br>
+            <h1 class="h1_style">Thank You.</h1>
         </div>
 
       <!-- footer start -->
