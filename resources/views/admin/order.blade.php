@@ -35,6 +35,9 @@
         {
             padding: 30px;
         }
+        .green{
+            color: green;
+        }
         </style>
   </head>
   <body>
@@ -48,6 +51,13 @@
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
+
+            @if(session()->has('message'))
+              <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                {{session()->get('message')}}</div>
+            @endif
+            
             <div class="div_center">
                 <h2 class="h2_font">All Orders</h1>
                 <table class="center">
@@ -60,6 +70,8 @@
                         <th class="th_space">Payment Status</th>
                         <th class="th_space">Delivery Status</th>
                         <th class="th_space">Image</th>
+                        <th class="th_space">Delivered</th>
+                        <th class="th_space">Delete</th>
                     </tr>
                     @foreach($orders as $order)
                     <tr>
@@ -73,6 +85,12 @@
                         <td>
                             <img class="img_size" src="/product/{{$order->image}}">
                         </td>
+                        @if($order->delivery_status == 'Processing')
+                        <td><a class="btn btn-primary" onclick="return confirm('Are your sure this product is delivered')" href="{{route('delivered', $order->id)}}">If delivered</a></td>
+                        @else
+                        <td><p class="green">Complited</p></td>
+                        <td><a class="btn btn-primary" href="{{route('order_delete', $order->id)}}">Delete</a></td>
+                        @endif
                     </tr>
                     @endforeach
                 </table>

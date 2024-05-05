@@ -91,4 +91,17 @@ class AdminController extends Controller
         $orders = order::all();
         return view('admin.order', compact('orders'));
     }
+
+    public function delivered($id){
+        $orders = order::find($id);
+        $orders->delivery_status = "Delivered";
+        $orders->payment_status = "Paid";
+        $orders->save();
+        return redirect()->back();
+    }
+    public function order_delete($id){
+        $orders = order::find($id);
+        $orders->delete();
+        return redirect()->back()->with('message', 'Order Deleted Successfully');
+    }
 }
