@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Catagory;
 use App\Models\Product;
+use App\Models\Order;
 
 class AdminController extends Controller
 {
@@ -12,21 +13,25 @@ class AdminController extends Controller
         $data = catagory::all();
         return view('admin.catagory', compact('data'));
     }
+
     public function add_catagory(Request $request){
         $data= new catagory;
         $data->catagory_name = $request->catagory;
         $data->save();
         return redirect()->back()->with('message', 'Catagory Added Successfully');
     }
+
     public function delete_catagory($id){
         $data = catagory::find($id);
         $data->delete();
         return redirect()->back()->with('message', 'Catagory Deleted Successfully');
     }
+
     public function view_product(){
         $catagorys = catagory::all();
         return view('admin.product', compact('catagorys'));
     }
+
     public function add_product(Request $request){
         $product= new product;
         $product->title = $request->title;
@@ -44,20 +49,24 @@ class AdminController extends Controller
         $product->save();
         return redirect()->back()->with('message', 'Product Added Successfully');
     }
+
     public function show_product(){
         $products = product::all();
         return view('admin.show_product', compact('products'));
     }
+
     public function delete_product($id){
         $product = product::find($id);
         $product->delete();
         return redirect()->back()->with('message', 'Product Deleted Successfully');
     }
+
     public function update_product($id){
         $product = product::find($id);
         $catagorys = catagory::all();
         return view('admin.update_product', compact('product', 'catagorys'));
     }
+
     public function update_product_confirm(Request $request, $id){
         $product = product::find($id);
         $product->title = $request->title;
@@ -76,5 +85,10 @@ class AdminController extends Controller
         }
         $product->save();
         return redirect()->back()->with('message', 'Product Updated Successfully');
+    }
+
+    public function order(){
+        $orders = order::all();
+        return view('admin.order', compact('orders'));
     }
 }

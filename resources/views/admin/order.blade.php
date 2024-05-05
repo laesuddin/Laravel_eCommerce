@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    @include('admin.css')
+    <style type="text/css">
+        .div_center
+        {
+            text-align: center;
+            padding-top: 40px;
+        }
+        .center
+        {
+          margin: auto;
+          width: 50%;
+          text-align: center;
+          margin-top: 40px;
+          border: 2px solid white;
+        }
+        .h2_font
+        {
+            font-size: 40px;
+            padding-bottom: 40px;
+        }
+        .img_size
+        {
+            width: 100px;
+            height: 100px;
+        }
+        .th_color
+        {
+            background: skyblue;
+        }
+        .th_space
+        {
+            padding: 30px;
+        }
+        </style>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_sidebar.html -->
+      @include('admin.sidebar')
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_navbar.html -->
+        @include('admin.header')
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+            <div class="div_center">
+                <h2 class="h2_font">All Orders</h1>
+                <table class="center">
+                    <tr class="th_color">
+                        <th class="th_space">Name</th>
+                        <th class="th_space">Email</th>
+                        <th class="th_space">Product Title</th>
+                        <th class="th_space">Quantity</th>
+                        <th class="th_space">Price</th>
+                        <th class="th_space">Payment Status</th>
+                        <th class="th_space">Delivery Status</th>
+                        <th class="th_space">Image</th>
+                    </tr>
+                    @foreach($orders as $order)
+                    <tr>
+                        <td>{{$order->name}}</td>
+                        <td>{{$order->email}}</td>
+                        <td>{{$order->product_title}}</td>
+                        <td>{{$order->quantity}}</td>
+                        <td>{{$order->price}}</td>
+                        <td>{{$order->payment_status}}</td>
+                        <td>{{$order->delivery_status}}</td>
+                        <td>
+                            <img class="img_size" src="/product/{{$order->image}}">
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+                </div>
+            </div>
+        </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    @include('admin.script')    
+    <!-- End custom js for this page -->
+  </body>
+</html>
