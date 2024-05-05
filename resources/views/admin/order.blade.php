@@ -57,7 +57,7 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                 {{session()->get('message')}}</div>
             @endif
-            
+
             <div class="div_center">
                 <h2 class="h2_font">All Orders</h1>
                 <table class="center">
@@ -70,7 +70,9 @@
                         <th class="th_space">Payment Status</th>
                         <th class="th_space">Delivery Status</th>
                         <th class="th_space">Image</th>
+                        <th class="th_space">Print PDF</th>
                         <th class="th_space">Delivered</th>
+                        
                         <th class="th_space">Delete</th>
                     </tr>
                     @foreach($orders as $order)
@@ -79,12 +81,13 @@
                         <td>{{$order->email}}</td>
                         <td>{{$order->product_title}}</td>
                         <td>{{$order->quantity}}</td>
-                        <td>{{$order->price}}</td>
+                        <td>${{$order->price}}</td>
                         <td>{{$order->payment_status}}</td>
                         <td>{{$order->delivery_status}}</td>
                         <td>
                             <img class="img_size" src="/product/{{$order->image}}">
                         </td>
+                        <td><a class="btn btn-secondary" href="{{route('print_orderinfo', $order->id)}}">Print</a></td>
                         @if($order->delivery_status == 'Processing')
                         <td><a class="btn btn-primary" onclick="return confirm('Are your sure this product is delivered')" href="{{route('delivered', $order->id)}}">If delivered</a></td>
                         @else

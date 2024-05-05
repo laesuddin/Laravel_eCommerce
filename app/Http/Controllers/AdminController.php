@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Catagory;
 use App\Models\Product;
 use App\Models\Order;
+use PDF;
 
 class AdminController extends Controller
 {
@@ -99,9 +100,16 @@ class AdminController extends Controller
         $orders->save();
         return redirect()->back();
     }
+
     public function order_delete($id){
         $orders = order::find($id);
         $orders->delete();
         return redirect()->back()->with('message', 'Order Deleted Successfully');
+    }
+
+    public function print_orderinfo($id){
+        $orders = order::find($id);
+        $pdf = pdf::loadView('admin.pdf', compact('orders'));
+        return $pdf->download('order_details.pdf');
     }
 }
