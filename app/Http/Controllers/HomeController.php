@@ -17,10 +17,6 @@ class HomeController extends Controller
         $products = product::paginate(10);
         return view('home.userpage', compact('products'));
     }
-    
-    public function index(){
-        return view('admin.dashboard');
-    }
 
     public function product_details($id){
         $product = product::find($id);

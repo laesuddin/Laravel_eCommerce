@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Catagory;
 use App\Models\Product;
 use App\Models\Order;
@@ -10,6 +12,22 @@ use PDF;
 
 class AdminController extends Controller
 {
+    public function index(){
+        $total_product = product::all()->count();
+        $total_order = order::all()->count();
+        $total_customer = user::all()->count();
+        $total_delivered = order::where('delivery_status', '=', 'Delivered')->get()->count();
+        $total_processing = order::where('delivery_status', '=', 'Processing')->get()->count();
+        $orders = order::all();
+        $total_revenue = 0;
+        foreach($orders as $order){
+            if($order->delivery_status == 'Delivered'){
+                $total_revenue = $total_revenue + $order->price;
+            }
+        }
+        return view('admin.dashboard', compact('total_product','total_order','total_customer', 'total_revenue', 'total_delivered', 'total_processing'));
+    }
+
     public function view_catagory(){
         $data = catagory::all();
         return view('admin.catagory', compact('data'));
