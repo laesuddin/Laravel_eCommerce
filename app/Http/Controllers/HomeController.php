@@ -8,6 +8,8 @@ use App\Models\Product;
 use App\Models\User;
 use App\Models\Cart;
 use App\Models\Order;
+use Illuminate\Support\Facades\Session;
+use Stripe;
 
 class HomeController extends Controller
 {
@@ -34,7 +36,8 @@ class HomeController extends Controller
              $cart->email = $user->email;
              $cart->user_id = $user->id;
              $cart->product_title = $product->title;
-             
+     
+
              if($product->discount_price != null)
              {
                 $cart->price = $product->discount_price * $request->quantity;
@@ -47,6 +50,15 @@ class HomeController extends Controller
              $cart->product_id = $product->id;
              $cart->quantity = $request->quantity;
              $cart->save();
+
+             $cart = session()->get('cart', []);
+             // Add the item to the cart
+             $cart[] = $request->input('product_id');
+             // Store the updated cart in the session
+             session()->put('cart', $cart);
+             // Count the total items in the cart
+             $cartCount = count($cart);
+
              return redirect()->back();
         }
         else{
@@ -72,7 +84,7 @@ class HomeController extends Controller
 
     public function remove_cart($id){
         $cart = cart::find($id);
-        $cart->delete();
+        $cart->delete();       
         return redirect()->back();
     }
 
@@ -99,5 +111,45 @@ class HomeController extends Controller
         }
         return view('home.comfirm_product');
     }
+
+    public function stripe($totalprice){
+        return view('home.stripe', compact('totalprice'));
+    }
+
+    public function stripePost(Request $request, $totalprice)
+    {
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
     
+        Stripe\Charge::create ([
+                "amount" => $totalprice * 100,
+                 "currency" => "usd",
+                "source" => $request->stripeToken,
+                "description" => "Thanks for Payment." 
+        ]);
+        
+
+        $id = Auth::user()->id;
+        $carts = cart::where('user_id', '=' , $id)->get();
+        foreach($carts as $cart){
+            $order = new order;
+            $order->name = $cart->name;
+            $order->email = $cart->email;
+            $order->user_id = $cart->user_id;
+            $order->product_title = $cart->product_title;
+            $order->price = $cart->price;
+            $order->quantity = $cart->quantity;
+            $order->image = $cart->image;
+            $order->product_id = $cart->product_id;
+            $order->payment_status = 'Paid';
+            $order->delivery_status = 'Processing';
+            $order->save();
+
+            $cart_id = $cart->id;
+            $find_cart = cart::find($cart_id);
+            $find_cart->delete();
+        }
+
+        Session::flash('success', 'Payment successful!');
+        return view('home.comfirm_product');
+    }
 }

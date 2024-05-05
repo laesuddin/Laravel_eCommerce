@@ -27,7 +27,10 @@
                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="{{route('show_cart')}}">Cart</a>
+                           <a class="nav-link" href="{{route('show_cart')}}">
+                           <i class="fa fa-shopping-cart"></i>
+                           <!-- <span class="cart-count">{{ session('cart') ? count(session('cart')) : 0 }}</span> -->
+                           </a>
                         </li>
                         <form class="form-inline">
                            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
