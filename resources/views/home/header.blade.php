@@ -29,7 +29,9 @@
                         <li class="nav-item">
                            <a class="nav-link" href="{{route('show_cart')}}">
                            <i class="fa fa-shopping-cart"></i>
-                           <!-- <span class="cart-count">{{ session('cart') ? count(session('cart')) : 0 }}</span> -->
+                           @if(Auth::id())
+                           <span class="cart-count">{{ session('cart') ? count(session('cart')) : 0 }}</span>
+                           @endif
                            </a>
                         </li>
                         <li class="nav-item">

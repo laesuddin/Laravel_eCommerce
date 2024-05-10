@@ -80,13 +80,24 @@ class HomeController extends Controller
         }
     }
 
-    public function remove_cart($id){
+    public function remove_cart(Request $request ,$id){
         $cart = cart::find($id);
-        $cart->delete();       
+        $cart->delete();
+
+        // Get the cart from the session
+        $cart = session()->get('cart', []);
+        // Remove the item from the cart
+        if (($key = array_search($request->input('product_id'), $cart)) !== false) {
+            unset($cart[$key]);
+        }
+        // Store the updated cart in the session
+        session()->put('cart', $cart);
+        // Count the total items in the cart
+        $cartCount = count($cart);     
         return redirect()->back();
     }
 
-    public function cash_order(){
+    public function cash_order(Request $request){
         $id = Auth::user()->id;
         $carts = cart::where('user_id', '=' , $id)->get();
         foreach($carts as $cart){
@@ -108,7 +119,18 @@ class HomeController extends Controller
             $cart_id = $cart->id;
             $find_cart = cart::find($cart_id);
             $find_cart->delete();
-        }
+
+                    // Get the cart from the session
+            $cart = session()->get('cart', []);
+            // Remove the item from the cart
+            if (($key = array_search($request->input('product_id'), $cart)) !== false) {
+                unset($cart[$key]);
+            }
+            // Store the updated cart in the session
+            session()->put('cart', $cart);
+            // Count the total items in the cart
+            $cartCount = count($cart);  
+            }
         return view('home.comfirm_product');
     }
 
