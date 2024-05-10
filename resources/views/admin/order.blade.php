@@ -33,7 +33,7 @@
         }
         .th_space
         {
-            padding: 30px;
+            padding: 20px;
         }
         .green{
             color: green;
@@ -64,6 +64,8 @@
                     <tr class="th_color">
                         <th class="th_space">Name</th>
                         <th class="th_space">Email</th>
+                        <th class="th_space">Phone</th>
+                        <th class="th_space">Address</th>
                         <th class="th_space">Product Title</th>
                         <th class="th_space">Quantity</th>
                         <th class="th_space">Price</th>
@@ -79,6 +81,8 @@
                     <tr>
                         <td>{{$order->name}}</td>
                         <td>{{$order->email}}</td>
+                        <td class="th_space">{{$order->phone}}</td>
+                        <td>{{$order->address}}</td>
                         <td>{{$order->product_title}}</td>
                         <td>{{$order->quantity}}</td>
                         <td>${{$order->price}}</td>

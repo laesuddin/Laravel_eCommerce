@@ -30,6 +30,8 @@ class HomeController extends Controller
              $cart = new cart;
              $cart->name = $user->name;
              $cart->email = $user->email;
+             $cart->phone = $user->phone;
+             $cart->address = $user->address;
              $cart->user_id = $user->id;
              $cart->product_title = $product->title;
      
@@ -91,6 +93,8 @@ class HomeController extends Controller
             $order = new order;
             $order->name = $cart->name;
             $order->email = $cart->email;
+            $order->phone = $cart->phone;
+            $order->address = $cart->address;
             $order->user_id = $cart->user_id;
             $order->product_title = $cart->product_title;
             $order->price = $cart->price;
@@ -130,6 +134,8 @@ class HomeController extends Controller
             $order = new order;
             $order->name = $cart->name;
             $order->email = $cart->email;
+            $order->phone = $cart->phone;
+            $order->address = $cart->address;
             $order->user_id = $cart->user_id;
             $order->product_title = $cart->product_title;
             $order->price = $cart->price;
