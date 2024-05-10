@@ -120,7 +120,7 @@ class HomeController extends Controller
             $find_cart = cart::find($cart_id);
             $find_cart->delete();
 
-                    // Get the cart from the session
+            // Get the cart from the session
             $cart = session()->get('cart', []);
             // Remove the item from the cart
             if (($key = array_search($request->input('product_id'), $cart)) !== false) {
@@ -130,7 +130,7 @@ class HomeController extends Controller
             session()->put('cart', $cart);
             // Count the total items in the cart
             $cartCount = count($cart);  
-            }
+        }
         return view('home.comfirm_product');
     }
 
@@ -171,6 +171,17 @@ class HomeController extends Controller
             $cart_id = $cart->id;
             $find_cart = cart::find($cart_id);
             $find_cart->delete();
+
+            // Get the cart from the session
+            $cart = session()->get('cart', []);
+            // Remove the item from the cart
+            if (($key = array_search($request->input('product_id'), $cart)) !== false) {
+                unset($cart[$key]);
+            }
+            // Store the updated cart in the session
+            session()->put('cart', $cart);
+            // Count the total items in the cart
+            $cartCount = count($cart);  
         }
 
         Session::flash('success', 'Payment successful!');
