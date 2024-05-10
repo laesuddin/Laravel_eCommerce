@@ -50,3 +50,4 @@ Route::get('/stripe/{totalprice}', [HomeController::class, 'stripe'])->name('str
 Route::post('stripe/{totalprice}', [HomeController::class, 'stripePost'])->name('stripe.post');
 Route::get('/show_order', [HomeController::class, 'show_order'])->name('show_order');
 Route::get('/remove_order/{id}', [HomeController::class, 'remove_order'])->name('remove_order');
+Route::get('/product_search', [HomeController::class, 'product_search'])->name('product_search');
