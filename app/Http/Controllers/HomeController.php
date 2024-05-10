@@ -154,4 +154,26 @@ class HomeController extends Controller
         Session::flash('success', 'Payment successful!');
         return view('home.comfirm_product');
     }
+
+    public function show_order(){
+        if(Auth::id()){
+            $id = Auth::user()->id;
+            $order = order::where('user_id', '=' , $id)->get();
+            $orderItems = order::all();
+            if($orderItems->isEmpty()){
+                return view('home.empty_order');
+            }else{
+                return view('home.showorder', compact('order'));
+            } 
+        }
+        else{
+            return redirect('login');
+        }
+    }
+
+    public function remove_order($id){
+        $order = order::find($id);
+        $order->delete();       
+        return redirect()->back();
+    }
 }
