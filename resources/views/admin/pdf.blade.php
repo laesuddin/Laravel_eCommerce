@@ -36,6 +36,8 @@ tr:nth-child(even) {
         <h2>Customer Information:</h2>
         <p><strong>Customer Name:</strong> {{$orders->name}}</p>
         <p><strong>Email:</strong> {{$orders->email}}</p>
+        <p><strong>Phone:</strong> {{$orders->phone}}</p>
+        <p><strong>Address:</strong> {{$orders->address}}</p>
         <p><strong>Customer ID:</strong> {{$orders->user_id}}</p>
     </div>
     <div>
