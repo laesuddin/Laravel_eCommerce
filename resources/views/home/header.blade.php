@@ -18,7 +18,7 @@
                            </ul>
                         </li> -->
                         <li class="nav-item">
-                           <a class="nav-link" href="{{route('all_products')}}">Products</a>
+                           <a class="nav-link" href="{{route('all_products')}}">shop</a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="{{route('show_cart')}}">cart
@@ -33,11 +33,6 @@
                            <i class="fa fa-list"></i>
                            </a>
                         </li>
-                        <form class="form-inline">
-                           <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                           <i class="fa fa-search" aria-hidden="true"></i>
-                           </button>
-                        </form>
 
                         @if (Route::has('login'))
                         @auth

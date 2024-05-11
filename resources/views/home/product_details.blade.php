@@ -28,6 +28,11 @@
          <!-- end header section -->
 
       <div class="col-sm-6 col-md-4 col-lg-4" style="margin: auto; width: 50%; padding: 30px">
+            @if(session()->has('message'))
+              <div class="alert alert-success">
+                {{session()->get('message')}}
+               </div>
+            @endif
 
                      <div class="img-box" style="padding: 20px">
                         <img src="/product/{{$product->image}}" alt="">
@@ -90,6 +95,7 @@
          
          </p>
       </div>
+      
       <!-- jQery -->
       <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->

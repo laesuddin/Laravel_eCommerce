@@ -2,7 +2,7 @@
          <div class="container">
             <div class="heading_container heading_center">
                <h2>
-                  All <span>products</span>
+                  <span>Products</span>
                </h2>
                   <br><br>
                <div>
