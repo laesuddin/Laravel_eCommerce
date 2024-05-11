@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <base href="/admin/assets">
     @include('admin.css')
     <style type="text/css">
         .div_center
