@@ -21,13 +21,7 @@
                            <a class="nav-link" href="{{route('all_products')}}">Products</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="blog_list.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="{{route('show_cart')}}">
+                           <a class="nav-link" href="{{route('show_cart')}}">cart
                            <i class="fa fa-shopping-cart"></i>
                            @if(Auth::id())
                            <span class="cart-count">{{ session('cart') ? count(session('cart')) : 0 }}</span>
@@ -35,7 +29,9 @@
                            </a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="{{route('show_order')}}">Order</a>
+                           <a class="nav-link" href="{{route('show_order')}}">Order
+                           <i class="fa fa-list"></i>
+                           </a>
                         </li>
                         <form class="form-inline">
                            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
