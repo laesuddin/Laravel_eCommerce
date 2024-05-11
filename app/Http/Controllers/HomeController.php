@@ -215,4 +215,15 @@ class HomeController extends Controller
         $products = product::where('title', 'LIKE', "%$search_text%")->orWhere('catagory', 'LIKE', "$search_text")->paginate(10);      
         return view('home.userpage', compact('products'));
     }
+
+    public function search_product(Request $request){
+        $search_text = $request->search;
+        $products = product::where('title', 'LIKE', "%$search_text%")->orWhere('catagory', 'LIKE', "$search_text")->paginate(10);      
+        return view('home.all_products', compact('products'));
+    }
+
+    public function all_products(){   
+        $products = product::paginate(10); 
+        return view('home.all_products', compact('products'));
+    }
 }
