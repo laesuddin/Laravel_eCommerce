@@ -41,7 +41,7 @@ class HomeController extends Controller
                    $cart->price = $product->price * $cart->quantity;
                 }
                 $cart->save();
-                return redirect()->back();
+                return redirect()->back()->with('message', 'Product Added Successfully in Cart');
 
              }else{
                 $cart = new cart;
@@ -74,7 +74,7 @@ class HomeController extends Controller
                 // Count the total items in the cart
                 $cartCount = count($cart);
    
-                return redirect()->back();
+                return redirect()->back()->with('message', 'Product Added Successfully in Cart');
              }
 
         }
