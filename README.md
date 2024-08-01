@@ -7,5 +7,7 @@ On the homepage, users can register and log in to this website. They can see all
 ![product_details](https://github.com/user-attachments/assets/b584ef69-a157-4263-81db-0e5cc76a7bb8)
 ## Add to cart Page 
 ![add_to_cart](https://github.com/user-attachments/assets/911e95a7-35a2-44c8-8729-68a9686e4146)
+## Order Confirm
+![product_details](https://github.com/user-attachments/assets/c7eefb03-c881-43d7-a6c3-869724516337)
 
 
