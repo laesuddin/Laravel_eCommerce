@@ -3,6 +3,7 @@
 
 On the homepage, users can register and log in to this website. They can see all products and discounted items. If they like any product, they can add it to the cart and order it.
 
-
+## Product Details Page
+![product_details](https://github.com/user-attachments/assets/b584ef69-a157-4263-81db-0e5cc76a7bb8)
 
 
