@@ -1,7 +1,7 @@
 ## Admin
-Admin can view Total Products, Total Orders, Total Customers, Total Revenue, Order Delivered, and Order Processing from the Admin Dashboard.
-Admin can add and display products.
-Admin can also add categories.
+Admin can view Total Products, Total Orders, Total Customers, Total Revenue, Order Delivered, and Order Processing from the Admin Dashboard.\
+Admin can add and display products.\
+Admin can also add categories.\
 Admin can see confirmed orders and print details for courier.
 ## Home page 
 ![frontpage](https://github.com/user-attachments/assets/cac3fcea-be12-4d30-a82d-6068e514aa4f)
