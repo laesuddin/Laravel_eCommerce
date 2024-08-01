@@ -11,13 +11,13 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                    20% Discount
                                     </span>
                                     <br>
                                     On Everything
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 Discover the perfect blend of quality and affordability with our exclusive sale. Our collection is crafted with precision and care, ensuring each item is a testament to exceptional craftsmanship. Don't miss out on this limited-time offer to elevate your style effortlessly.
                                  </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
@@ -36,13 +36,13 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                    Massive 30% Off
                                     </span>
                                     <br>
-                                    On Everything
+                                    In Store!
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 Experience the finest selection of products at unbeatable prices. Each piece in our range is designed to meet the highest standards of excellence. Seize this opportunity to indulge in luxury without breaking the bank. Act fast, as this incredible deal won't last long!
                                  </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
@@ -61,13 +61,13 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                    20% Savings
                                     </span>
                                     <br>
-                                    On Everything
+                                    On All Purchases!
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 Unveil a world of elegance and sophistication with our premium offerings. Meticulously curated to deliver the best value, our sale is your gateway to top-notch quality. Take advantage of this amazing discount and transform your shopping experience now.
                                  </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">

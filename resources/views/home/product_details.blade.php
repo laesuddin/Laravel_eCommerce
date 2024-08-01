@@ -10,8 +10,8 @@
       <meta name="keywords" content="" />
       <meta name="description" content="" />
       <meta name="author" content="" />
-      <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="">
-      <title>Famms - Fashion HTML Template</title>
+      <link rel="shortcut icon" href="{{asset('images/logo-mini.png')}}" type="">
+      <title>eCommerce</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.css')}}"/>
       <!-- font awesome style -->
@@ -35,7 +35,7 @@
             @endif
 
                      <div class="img-box" style="padding: 20px">
-                        <img src="/product/{{$product->image}}" alt="">
+                        <img src="/product/{{$product->image}}" height="350px" width="400px" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -89,9 +89,9 @@
       @include('home.footer')
       <!-- footer end -->
       <div class="cpy_">
-         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
-         
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+         <p class="mx-auto">© 2021 All Rights Reserved<br>
+            
+            Developed By <a href="https://github.com/laesuddin/" target="_blank">Laes Uddin</a>
          
          </p>
       </div>

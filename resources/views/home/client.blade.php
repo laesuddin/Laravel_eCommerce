@@ -2,7 +2,7 @@
          <div class="container">
             <div class="heading_container heading_center">
                <h2>
-                  Customer's Testimonial
+                  Customer's Reviews
                </h2>
             </div>
             <div id="carouselExample3Controls" class="carousel slide" data-ride="carousel">
@@ -18,13 +18,13 @@
                         </div>
                         <div class="detail-box">
                            <h5>
-                              Anna Trevor
+                              Sophia
                            </h5>
                            <h6>
                               Customer
                            </h6>
                            <p>
-                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                           I had a fantastic experience shopping here! The products are top-notch and the customer service is exceptional. Fast shipping and excellent quality. I highly recommend this store to everyone!
                            </p>
                         </div>
                      </div>
@@ -34,19 +34,19 @@
                         <div class="img_container">
                            <div class="img-box">
                               <div class="img_box-inner">
-                                 <img src="images/client.jpg" alt="">
+                                 <img src="images/client2.jpg" alt="">
                               </div>
                            </div>
                         </div>
                         <div class="detail-box">
                            <h5>
-                              Anna Trevor
+                              John Davis
                            </h5>
                            <h6>
                               Customer
                            </h6>
                            <p>
-                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                           The variety and quality of items available are unmatched. I found exactly what I was looking for, and the prices are very reasonable. Great customer support. Will definitely shop here again!
                            </p>
                         </div>
                      </div>
@@ -56,19 +56,19 @@
                         <div class="img_container">
                            <div class="img-box">
                               <div class="img_box-inner">
-                                 <img src="images/client.jpg" alt="">
+                                 <img src="images/client3.jpg" alt="">
                               </div>
                            </div>
                         </div>
                         <div class="detail-box">
                            <h5>
-                              Anna Trevor
+                              Maria Lopez
                            </h5>
                            <h6>
                               Customer
                            </h6>
                            <p>
-                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                              I am impressed with the quick delivery and the quality of the products. Everything arrived in perfect condition. The customer service team was very helpful. Highly satisfied with my purchase!
                            </p>
                         </div>
                      </div>
