@@ -1,5 +1,5 @@
 ## Admin
-![admindas](https://github.com/user-attachments/assets/d02d292e-f665-486c-883d-a6e41ccd1524)
+![admin](https://github.com/user-attachments/assets/a8a9f2d8-4134-4274-bf66-f1e7bb124b1e)
 1. Admin can view Total Products, Total Orders, Total Customers, Total Revenue, Order Delivered, and Order Processing from the Admin Dashboard.
 2. Admin can add and display products.
 3. Admin can also add categories.
