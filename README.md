@@ -8,6 +8,6 @@ On the homepage, users can register and log in to this website. They can see all
 ## Add to cart Page 
 ![add_to_cart](https://github.com/user-attachments/assets/911e95a7-35a2-44c8-8729-68a9686e4146)
 ## Order Confirm
-![product_details](https://github.com/user-attachments/assets/c7eefb03-c881-43d7-a6c3-869724516337)
+![orderconfirm](https://github.com/user-attachments/assets/071bc4e4-825e-4d2b-972d-e43fea0b26ab)
 
 
